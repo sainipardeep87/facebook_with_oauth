@@ -1,0 +1,23 @@
+ <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+ <h3>or</h3>
+<% provide(:title, "Sign in") %>
+
+
+    <%= form_for(:session, url: sessions_path) do |f| %>
+      <div class="field">
+
+            <div class="label_div"> <%= f.label :email %> </div>
+            <div class="value_div"> <%= f.text_field :email,:size => 20 %> </div>
+
+      </div>
+      <div class="field">
+        <p>
+        <div class="label_div"><%= f.label :password %></div>
+         <div class="value_div"><%= f.password_field :password,:size => 20 %></div>
+        </p>
+      </div>
+
+       <div class="submit_button"> <%= f.submit "Sign in" %></div>
+    <% end %>
+
+
